@@ -1,0 +1,16 @@
+version: "2.1"
+
+services:
+  web:
+    build: 
+      context: ../
+      dockerfile: Dockerfile/nginx-dockerfile
+    container_name: web-server
+    ports:
+      - 8010:80
+    volumes:
+      - /FullStackProject/nginx-static-website/config:/etc/nginx/
+      - /FullStackProject/nginx-static-website/www:/usr/share/nginx/
+    restart: always
+    command: service nginx start
+

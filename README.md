@@ -21,8 +21,19 @@ sudo mount -t vboxsf -o defaults,uid=`id -u docker`,gid=`id -g docker` CloudAssi
 ```
 
 ### System requirements
-* Window Os
+* Window OS
 * Docker Toolbox: https://docs.docker.com/toolbox/toolbox_install_windows/
 * Docker version: 18.03
 * Docker-machine version 0.14.0
 * Docker-compose version 1.20.1
+
+### Implementation
+#### Nginx
+* Reference [nginx serve static file](https://github.com/arunkumars08/docker-static-files-serve)
+* Using docker compose + dockerfile
+  - nginx-dockerfile: declare dependencies, and ports
+  - docker-compose.yml: create container, link ports, volumes and command
+* Goals: 
+  - move changealbe part to docker-compose => more flexible
+  - create volume for html folder which is content of the page
+  - create volume for config folder which is for configuration of nginx server
