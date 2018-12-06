@@ -35,5 +35,16 @@ sudo mount -t vboxsf -o defaults,uid=`id -u docker`,gid=`id -g docker` CloudAssi
   - docker-compose.yml: create container, link ports, volumes and command
 * Goals: 
   - move changealbe part to docker-compose => more flexible
+  - docker-compose make it easier to manage containers (especially auto remove container after stopping containers)
   - create volume for html folder which is content of the page
   - create volume for config folder which is for configuration of nginx server
+* Usage
+  - go to nginx-static-website folder which includes docker-compose.yml file
+  - run container
+  ```
+  docker-compose up -d
+  ```
+  - stop
+  ```
+  docker-compose down
+  ```
